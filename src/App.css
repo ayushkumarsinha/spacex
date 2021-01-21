@@ -1,7 +1,15 @@
-.App {
-  text-align: center;
+body{
+  background-color: rgb(235, 235, 235);
 }
 
+.App {
+  text-align: left;
+}
+
+.blue-color{
+  color: rgb(10, 10, 196);
+}
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,10 +34,105 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+.center-align{
+  text-align: center;
+}
+
+.home-heading{
+  text-align: left;
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 5px;
+}
+
+.left-pane-style{
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.left-pane-button{
+  margin: 5px;
+  cursor: pointer;
+  max-width: 65px;
+  border: none;
+  border-radius: 5px;
+}
+
+.left-pane-button-clear{
+  margin: 5px;
+  cursor: pointer;
+  max-width: 140px;
+  border: none;
+  border-radius: 5px;
+}
+
+.left-pane-button-color{
+  background-color: lightgreen;
+}
+
+.left-pane-button-color-dark{
+  background-color: rgb(3, 150, 3);
+}
+
+.year-margin{
+  margin: 5px;
 }
 
 .card-width{
-  width: 18rem;
+  width: 230px;
+  margin: 0px 0px 10px 9px;
+}
+
+.card-padding{
+  margin: 5px;
+  display: inline-block;
+  text-align: left;
+}
+
+.card-title{
+  height: 40px;
+}
+
+.card-text-info{
+  margin: 0px 5px 0px 0px;
+}
+
+.card-style{
+  display: inline-block;
+  max-height: 50rem;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card-img-top{
+  background-color: rgb(235, 235, 235);
+  padding: 20px;
+}
+
+.filter-spacing{
+  height: 30px;
+}
+
+.filter-area{
+    padding: 5px;
+    margin: 0px 0px 5px 10px;
+    display: inline-block;
+}
+
+.hr-m{
+  margin: 0px 10px 0px 10px;
+}
+
+.p-t-0{
+  padding-top: 0px;
 }
 
 @keyframes App-logo-spin {
@@ -38,5 +141,40 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card-padding{
+    display: inline-block;
+    text-align: center;
+  }
+
+  .card-width {
+    width: 255px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .pane-container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .left-pane-style {
+    max-width: 255px;
+    margin: auto;
+  }
+
+  .year-button {
+    margin: 5px 20px 10px 25px;
+    cursor: pointer;
+    max-width: 65px;
+  }
+
+  .year-margin {
+    margin: 0px 0px 5px 25px;
   }
 }

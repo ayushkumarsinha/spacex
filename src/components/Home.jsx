@@ -6,6 +6,8 @@ function Home(props){
         <>
             <h1 className="home-heading">SpaceX Launch Programs</h1>
             <SpaceCraftDetails />
+            <footer><strong>Developed by: </strong>Ayush</footer>
+            <br />
         </>
     )
 }

@@ -51,7 +51,7 @@ function SpaceCraftDetails(){
                     <div className="left-pane-style">
                         <h5 className="left-pane-title">Filters</h5>
                         <div className="text-center">Launch Year</div>
-                        <hr />
+                        <hr className="hr-m" />
                         <div className="row year-margin">
                             {!isLoading && allData && 
                                 allData.reduce((u,i)=>{return u.includes(i.launch_year)?u:[...u,i.launch_year]},[]).map((d, index) => 
@@ -66,7 +66,7 @@ function SpaceCraftDetails(){
                                     ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Launch</div>
-                        <hr />
+                        <hr className="hr-m" />
                         <div className="row year-margin">
                             <button className={launchSuccess !== null && launchSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="launch_success_true"
@@ -80,7 +80,7 @@ function SpaceCraftDetails(){
                             ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Landing</div>
-                        <hr />
+                        <hr className="hr-m" />
                         <div className="row year-margin">
                             <button className={landSuccess !== null && landSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="land_success_true"
@@ -100,16 +100,16 @@ function SpaceCraftDetails(){
                         <div key={index} className="card-style card card-width">
                             <img className="card-img-top" src={d.links.mission_patch_small} alt="Card cap"/>
                             <div className="card-body">
-                                <div className="row card-title blue-color"><strong>{d.mission_name + "# " + d.flight_number}</strong></div>
-                                <div className="row"><strong>Mission Ids:</strong></div>
-                                <ul className="row"> 
+                                <div className="card-text-spacing card-title blue-color"><strong>{d.mission_name + "# " + d.flight_number}</strong></div>
+                                <div className="card-text-spacing"><strong>Mission Ids:</strong></div>
+                                <ul className="card-text-spacing"> 
                                     {d.mission_id.length>0 ?
                                     (d.mission_id.map((mission, m_i)=><li className="blue-color" key={m_i}>{mission}</li>))
                                     : <li className="blue-color"><i>No mission ids</i></li>}
                                 </ul>
-                                <div className="row"><span className="card-text-info"><strong>Launch Year:</strong></span><span className="blue-color">{d.launch_year}</span></div>
-                                <div className="row"><span className="card-text-info"><strong>Successful Launch:</strong></span><span className="blue-color">{JSON.stringify(d.launch_success)}</span></div>
-                                <div className="row"><span className="card-text-info"><strong>Successful Landing:</strong></span><span className="blue-color">{JSON.stringify(d.rocket.first_stage.cores[0].land_success)}</span></div>
+                                <div className="card-text-spacing"><span className="card-text-info"><strong>Launch Year:</strong></span><span className="blue-color">{d.launch_year}</span></div>
+                                <div className="card-text-spacing"><span className="card-text-info"><strong>Successful Launch:</strong></span><span className="blue-color">{JSON.stringify(d.launch_success)}</span></div>
+                                <div className="card-text-spacing"><span className="card-text-info"><strong>Successful Landing:</strong></span><span className="blue-color">{JSON.stringify(d.rocket.first_stage.cores[0].land_success)}</span></div>
                             </div>
                         </div>   
                     )}

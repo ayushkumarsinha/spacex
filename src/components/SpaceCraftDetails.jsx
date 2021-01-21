@@ -37,7 +37,6 @@ function SpaceCraftDetails(){
             try {
                 const response = await axios(url);      
                 setData(response.data);
-                console.log(data);
             } catch (error) {
                 setError(true);
             }
@@ -46,62 +45,62 @@ function SpaceCraftDetails(){
         fetchYearFilterData();
     },[yearValue, launchSuccess, landSuccess]);
     return (!isError ?
-        <div className="container">
-            <div className="row center-align">
-                <div className="filter-area col-md-2 col-sm-12">
+        <div className="">
+            <div className="pane-container center-align">
+                <div className="filter-area">
                     <div className="left-pane-style">
-                        <h5>Filters</h5>
+                        <h5 className="left-pane-title">Filters</h5>
                         <div className="text-center">Launch Year</div>
                         <hr className="hr-m"/>
                         <div className="row year-margin">
                             {!isLoading && allData && 
                                 allData.reduce((u,i)=>{return u.includes(i.launch_year)?u:[...u,i.launch_year]},[]).map((d, index) => 
-                                <button className={yearValue === d ? "col-sm-6 left-pane-button left-pane-button-color-dark" : "col-sm-6 left-pane-button left-pane-button-color" }
+                                <button className={yearValue === d ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                         key={index}
                                         onClick={()=>{setYearValue(d)}}
                                         >{d}</button>)
                             }
                         </div>
-                        <button className={yearValue === 0 ? "col-sm-6 left-pane-button-clear left-pane-button-color-dark" : "col-sm-6 left-pane-button-clear left-pane-button-color" }
+                        <button className={yearValue === 0 ? "pane-container left-pane-button-clear left-pane-button-color-dark" : "pane-container left-pane-button-clear left-pane-button-color" }
                                     onClick={()=>{setYearValue(0)}}
-                                    >All</button>
+                                    ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Launch</div>
                         <hr className="hr-m"/>
                         <div className="row year-margin">
-                            <button className={launchSuccess !== null && launchSuccess === true ? "col-sm-6 left-pane-button left-pane-button-color-dark" : "col-sm-6 left-pane-button left-pane-button-color" }
+                            <button className={launchSuccess !== null && launchSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="launch_success_true"
                                 onClick={()=>{setLaunchSuccess(true)}}>True</button>
-                            <button className={launchSuccess !== null && launchSuccess === false ? "col-sm-6 left-pane-button left-pane-button-color-dark" : "col-sm-6 left-pane-button left-pane-button-color" }
+                            <button className={launchSuccess !== null && launchSuccess === false ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="launch_success_false"
                                 onClick={()=>{setLaunchSuccess(false)}}>False</button>
                         </div>
-                        <button className={launchSuccess === null ? "col-sm-6 left-pane-button-clear left-pane-button-color-dark" : "col-sm-6 left-pane-button-clear left-pane-button-color" }
+                        <button className={launchSuccess === null ? "pane-container left-pane-button-clear left-pane-button-color-dark" : "pane-container left-pane-button-clear left-pane-button-color" }
                             onClick={()=>{setLaunchSuccess(null)}}
-                            >All</button>
+                            ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Landing</div>
                         <hr className="hr-m"/>
                         <div className="row year-margin">
-                            <button className={landSuccess !== null && landSuccess === true ? "col-sm-6 left-pane-button left-pane-button-color-dark" : "col-sm-6 left-pane-button left-pane-button-color" }
+                            <button className={landSuccess !== null && landSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="land_success_true"
                                 onClick={()=>{setLandSuccess(true)}}>True</button>
-                            <button className={landSuccess !== null && landSuccess === false ? "col-sm-6 left-pane-button left-pane-button-color-dark" : "col-sm-6 left-pane-button left-pane-button-color" }
+                            <button className={landSuccess !== null && landSuccess === false ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="land_success_false"
                                 onClick={()=>{setLandSuccess(false)}}>False</button>
                         </div>
-                        <button className={landSuccess === null ? "col-sm-6 left-pane-button-clear left-pane-button-color-dark" : "col-sm-6 left-pane-button-clear left-pane-button-color" }
+                        <button className={landSuccess === null ? "pane-container left-pane-button-clear left-pane-button-color-dark" : "pane-container left-pane-button-clear left-pane-button-color" }
                             onClick={()=>{setLandSuccess(null)}}
-                            >All</button>
+                            ><span className="m-a">All</span></button>
                     </div>
                 </div>
-                <div className="card-padding col-md-9 col-sm-12">
+                <div className="card-padding right-pane">
                     {!isLoading && data && data.length === 0 ? <h6><i>No records to display.</i></h6> :
                      !isLoading && data && data.map((d, index) => 
                         <div key={index} className="card-style card card-width">
                             <img className="card-img-top" src={d.links.mission_patch_small} alt="Card cap"/>
                             <div className="card-body">
-                                <h6 className="row card-title blue-color"><strong>{d.mission_name + "# " + d.flight_number}</strong></h6>
+                                <div className="row card-title blue-color"><strong>{d.mission_name + "# " + d.flight_number}</strong></div>
                                 <div className="row"><strong>Mission Ids:</strong></div>
                                 <ul className="row"> 
                                     {d.mission_id.length>0 ?
@@ -111,7 +110,6 @@ function SpaceCraftDetails(){
                                 <div className="row"><span className="card-text-info"><strong>Launch Year:</strong></span><span className="blue-color">{d.launch_year}</span></div>
                                 <div className="row"><span className="card-text-info"><strong>Successful Launch:</strong></span><span className="blue-color">{JSON.stringify(d.launch_success)}</span></div>
                                 <div className="row"><span className="card-text-info"><strong>Successful Landing:</strong></span><span className="blue-color">{JSON.stringify(d.rocket.first_stage.cores[0].land_success)}</span></div>
-                                {/* <button className="btn btn-primary">Go somewhere</button> */}
                             </div>
                         </div>   
                     )}

@@ -13,7 +13,9 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "serve": "^11.3.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "favicons-webpack-plugin": "^4.2.0",
+    "webpack-pwa-manifest": "^4.3.0"
   },
   "scripts": {
     "start": "node server/server.js",

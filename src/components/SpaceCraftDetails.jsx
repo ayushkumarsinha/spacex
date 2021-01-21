@@ -51,7 +51,7 @@ function SpaceCraftDetails(){
                     <div className="left-pane-style">
                         <h5 className="left-pane-title">Filters</h5>
                         <div className="text-center">Launch Year</div>
-                        <hr className="hr-m"/>
+                        <hr />
                         <div className="row year-margin">
                             {!isLoading && allData && 
                                 allData.reduce((u,i)=>{return u.includes(i.launch_year)?u:[...u,i.launch_year]},[]).map((d, index) => 
@@ -66,7 +66,7 @@ function SpaceCraftDetails(){
                                     ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Launch</div>
-                        <hr className="hr-m"/>
+                        <hr />
                         <div className="row year-margin">
                             <button className={launchSuccess !== null && launchSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="launch_success_true"
@@ -80,7 +80,7 @@ function SpaceCraftDetails(){
                             ><span className="m-a">All</span></button>
                         <div className="filter-spacing"></div>
                         <div className="text-center">Successful Landing</div>
-                        <hr className="hr-m"/>
+                        <hr />
                         <div className="row year-margin">
                             <button className={landSuccess !== null && landSuccess === true ? "pane-container left-pane-button left-pane-button-color-dark" : "pane-container left-pane-button left-pane-button-color" }
                                 id="land_success_true"

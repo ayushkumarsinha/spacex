@@ -65,7 +65,7 @@ body{
 }
 
 .right-pane{
-  width: 100%;
+  width: 80%;
 }
 
 .year-margin{
@@ -90,14 +90,14 @@ body{
 }
 
 .card-width{
-  width: 200px;
-  margin: 0px 0px 10px 9px;
+  width: 190px;
+  margin: 0px 0px 10px 10px;
 }
 
 .card-padding{
   margin: 5px;
   display: inline-block;
-  text-align: left;
+  text-align: center;
 }
 
 .card-title{
@@ -137,14 +137,14 @@ body{
 
 .filter-area{
     padding: 5px;
-    margin: 0px 0px 5px 10px;
     display: inline-block;
-    width: 210px;
+    width: 220px;
 }
 
 .card-text-spacing{
   margin-block-start: 5px;
   margin-block-end: 10px;
+  text-align: left;
 }
 
 .p-t-0{
@@ -159,6 +159,7 @@ body{
   width: 90%;
   padding-right: 15px;
   padding-left: 15px;
+  justify-content: center;
 }
 
 .hr-m{

@@ -97,7 +97,7 @@ body{
 .card-padding{
   margin: 5px;
   display: inline-block;
-  text-align: left;
+  text-align: center;
 }
 
 .card-title{

@@ -97,7 +97,7 @@ body{
 .card-padding{
   margin: 5px;
   display: inline-block;
-  text-align: center;
+  text-align: left;
 }
 
 .card-title{
@@ -212,7 +212,6 @@ body{
   }
 
   .left-pane-button-clear{
-    margin: 5px;
     cursor: pointer;
     max-width: 145px;
     border: none;
